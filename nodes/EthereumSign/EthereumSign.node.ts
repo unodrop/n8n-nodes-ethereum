@@ -185,11 +185,14 @@ export class EthereumSign implements INodeType {
 
 			const signature = await wallet.signMessage(message);
 
+			const signedAt = new Date();
 			returnData.push({
 				json: {
 					message,
 					signature,
 					address: wallet.address,
+					signedAt: signedAt.toISOString(),
+					signedAtUnix: Math.floor(signedAt.getTime() / 1000),
 					...(chainId > 0 && { chainId }),
 				},
 				pairedItem: { item: i },
