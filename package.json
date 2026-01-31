@@ -30,9 +30,6 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "strict": false,
-    "credentials": [
-      "dist/credentials/EthereumWalletApi.credentials.js"
-    ],
     "nodes": [
       "dist/nodes/EthereumSign/EthereumSign.node.js",
       "dist/nodes/EthereumCreateWallet/EthereumCreateWallet.node.js"
