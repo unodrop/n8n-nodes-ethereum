@@ -32,7 +32,8 @@
     "strict": false,
     "nodes": [
       "dist/nodes/EthereumSign/EthereumSign.node.js",
-      "dist/nodes/EthereumCreateWallet/EthereumCreateWallet.node.js"
+      "dist/nodes/EthereumCreateWallet/EthereumCreateWallet.node.js",
+      "dist/nodes/Ethereum/Ethereum.node.js"
     ]
   },
   "devDependencies": {
