@@ -1,0 +1,46 @@
+{
+  "name": "n8n-nodes-ethereum",
+  "version": "0.1.0",
+  "description": "n8n community nodes for Ethereum: create wallet, sign messages (EIP-191).",
+  "license": "MIT",
+  "homepage": "",
+  "keywords": ["n8n-community-node-package"],
+  "author": { "name": "unodrop", "email": "coin9520@gmail.com" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unodrop/n8n-nodes-ethereum.git"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease"
+  },
+  "files": ["dist"],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": false,
+    "credentials": [
+      "dist/credentials/GithubIssuesApi.credentials.js",
+      "dist/credentials/GithubIssuesOAuth2Api.credentials.js",
+      "dist/credentials/EthereumWalletApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/GithubIssues/GithubIssues.node.js",
+      "dist/nodes/EthereumSign/EthereumSign.node.js",
+      "dist/nodes/EthereumCreateWallet/EthereumCreateWallet.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "*",
+    "eslint": "9.32.0",
+    "prettier": "3.6.2",
+    "release-it": "^19.0.4",
+    "typescript": "5.9.2"
+  },
+  "dependencies": { "ethers": "^6.16.0" },
+  "peerDependencies": { "n8n-workflow": "*" }
+}

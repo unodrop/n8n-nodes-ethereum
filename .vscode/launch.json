@@ -1,0 +1,37 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch n8n with inspect",
+			"type": "node",
+			"request": "launch",
+			"runtimeExecutable": "npx",
+			"runtimeArgs": ["-y", "n8n@latest"],
+			"env": {
+				"N8N_USER_FOLDER": "${env:HOME}/.n8n-node-cli",
+				"NODE_OPTIONS": "--inspect"
+			},
+			"cwd": "${env:HOME}/.n8n-node-cli",
+			"console": "integratedTerminal",
+			"skipFiles": ["<node_internals>/**"],
+			"outFiles": ["${workspaceFolder}/dist/**/*.js"]
+		},
+		{
+			"name": "Attach to running n8n",
+			"type": "node",
+			"request": "attach",
+			"port": 9229,
+			"skipFiles": ["<node_internals>/**"],
+			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
+			"sourceMaps": true
+		},
+		{
+			"name": "Attach to running n8n (pick process)",
+			"processId": "${command:PickProcess}",
+			"request": "attach",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node",
+			"outFiles": ["${workspaceFolder}/dist/**/*.js"]
+		}
+	]
+}
