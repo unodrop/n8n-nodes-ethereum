@@ -4,6 +4,30 @@ This is an n8n community node. It lets you use GitHub Issues in your n8n workflo
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/sustainable-use-license/) workflow automation platform.
 
+## 从 npm 安装（社区节点里「找不到」时看这里）
+
+### 1. 安装的是「包名」，不是节点名
+
+- 在 n8n 里：**设置 (Settings) → 社区节点 (Community nodes) → 安装 (Install)**。
+- 在「输入 npm 包名」里填：**`n8n-nodes-ethereum`**（必须和 npm 包名一致）。
+- 安装成功后，列表里会多出 `n8n-nodes-ethereum`，这是正常的。
+
+### 2. 节点在工作流里添加，不是在设置里找
+
+- 安装完成后，**不要**在「社区节点」列表里找具体节点。
+- 打开或新建一个**工作流**，点击 **「添加节点」(+)**，在搜索框里输入：
+  - **Ethereum**，或
+  - **Ethereum Sign**（签名），或
+  - **Ethereum Create Wallet**（创建钱包）
+- 这里会看到 **Ethereum Sign**、**Ethereum Create Wallet** 两个节点，拖入画布即可。
+
+### 3. 仅自托管 n8n 可用，n8n Cloud 不行
+
+- 本包依赖 `ethers`，未提交 n8n Cloud 验证，**不能在 n8n Cloud (app.n8n.cloud) 安装**。
+- 请在**自托管 n8n**（本机 `n8n start`、Docker、VPS 等）里安装；安装后按上面第 2 步在工作流里搜索 **Ethereum** 使用。
+
+---
+
 ## 本地 n8n 服务如何加载本节点
 
 有两种常用方式，任选其一即可。

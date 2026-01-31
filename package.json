@@ -31,12 +31,9 @@
     "n8nNodesApiVersion": 1,
     "strict": false,
     "credentials": [
-      "dist/credentials/GithubIssuesApi.credentials.js",
-      "dist/credentials/GithubIssuesOAuth2Api.credentials.js",
       "dist/credentials/EthereumWalletApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/GithubIssues/GithubIssues.node.js",
       "dist/nodes/EthereumSign/EthereumSign.node.js",
       "dist/nodes/EthereumCreateWallet/EthereumCreateWallet.node.js"
     ]
